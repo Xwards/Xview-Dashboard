@@ -10,8 +10,7 @@ class Ad(models.Model):
     end_date = models.DateTimeField('Date Ad Ends')
     play_count = models.IntegerField(default=0, editable=False)
     touch_count = models.IntegerField(default=0, editable=False)
-    play_duration = models.DurationField(editable=False)
-
+    play_duration = models.IntegerField(editable=False, default=0)
 
     def __str__(self):
         "Set to display advertiser name in the ads table"
