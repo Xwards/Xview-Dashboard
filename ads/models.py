@@ -7,9 +7,10 @@ class Ad(models.Model):
     play_count = models.IntegerField(default=0)
 
     def __str__(self):
+        "Set to display advertiser name in the ads table"
+
         return self.advertiser
 
-#class Device(models.Model):
-#    asset_tag = models.
 
-# Create your models here.
+class Device(models.Model):
+    pass
