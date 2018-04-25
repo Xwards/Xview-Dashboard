@@ -18,5 +18,13 @@ class Ad(models.Model):
         return self.advertiser
 
 
+class Campaign(models.Model):
+    name = models.CharField(max_length=2000)
+    playlist = models.ManyToManyField(Ad)
+
+    def __str__(self):
+        return self.name
+
+
 class Device(models.Model):
     pass
