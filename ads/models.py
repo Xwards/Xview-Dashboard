@@ -27,4 +27,15 @@ class Campaign(models.Model):
 
 
 class Device(models.Model):
-    pass
+    asset_tag = models.CharField(max_length=2000)
+    type = models.CharField(max_length=2000)
+    imei = models.intigerField(default=0, editable=False, unique=True,max_length=15)
+    mac = models.CharField(max_length=2000, editable=False, unique=True)
+    con_stat= models.BooleanField(editable=False)
+    sync_stat= models.BooleanField(editable=False)
+    last_seen = models.TimeField('Last Seen', editable=False)
+    play_duration = models.intigerField(default=0, editable=False)
+    pin = models.intigerField(default=0, editable=False)
+
+    def __str__(self):
+        return self.asset_tag
